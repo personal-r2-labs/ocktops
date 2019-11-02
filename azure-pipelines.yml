@@ -26,6 +26,9 @@ steps:
     FOO: $(foo)
 - script: echo $(FOO)
   displayName: "Echo foo"
-- script: npx semantic-release
+- script: > 
+    npx semantic-release 
+    -r https://romulo2franca@github.com/romulo2franca/ocktops.git
+    -b change-pipeline-3
   displayName: 'Semantic Release'
 
