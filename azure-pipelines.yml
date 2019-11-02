@@ -24,11 +24,15 @@ steps:
   env: 
     GH_TOKEN: $(GitHubToken)
     FOO: $(foo)
-- script: echo $(FOO)
-  displayName: "Echo foo"
+
 - script: > 
     npx semantic-release 
     -r https://romulo2franca@github.com/romulo2franca/ocktops.git
     -b change-pipeline-3
   displayName: 'Semantic Release'
 
+- script: echo $(GitHubToken)
+  displayName: "Echo Token"
+
+- script: echo $(FOO)
+  displayName: "Echo foo"
