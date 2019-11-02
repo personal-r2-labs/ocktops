@@ -21,7 +21,10 @@ steps:
   inputs:
     versionSpec: $(node_version)
 
-- script: sh GITHUB_TOKEN=$(GH_TOKEN)
+  env: 
+    GITHUB_TOKEN: $(GH_TOKEN)
+  
+- script: sh GITHUB_TOKEN=$env:GITHUB_TOKEN
 
 - script: > 
     npx semantic-release 
