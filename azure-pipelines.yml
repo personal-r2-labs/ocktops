@@ -6,6 +6,9 @@
 trigger:
 - master
 
+variables:
+  - group: semantic-release
+
 pool:
   vmImage: 'ubuntu-latest'
 strategy:
