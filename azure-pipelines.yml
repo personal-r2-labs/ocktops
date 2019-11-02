@@ -21,8 +21,11 @@ steps:
   inputs:
     versionSpec: $(node_version)
 
-- script: > 
-    npx semantic-release
   env: 
     GH_TOKEN: $(GitHubToken)
+    FOO: $(foo)
+- script: echo $(FOO)
+  displayName: "Echo foo"
+- script: npx semantic-release
   displayName: 'Semantic Release'
+
