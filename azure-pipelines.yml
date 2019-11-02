@@ -4,7 +4,7 @@
 # https://aka.ms/yaml
 
 trigger:
-- change-pipeline-3
+- master
 
 variables:
   - group: semantic-release
