@@ -22,9 +22,9 @@ steps:
     versionSpec: $(node_version)
 
   env: 
-    GITHUB_TOKEN: $(GH_TOKEN)
+    GIT_VAR: $(GH_TOKEN)
   
-- script: GITHUB_TOKEN=$(GH_TOKEN)
+- script: GITHUB_TOKEN=$(GIT_VAR)
 
 - script: > 
     npx semantic-release 
