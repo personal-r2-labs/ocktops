@@ -22,7 +22,7 @@ steps:
     versionSpec: $(node_version)
 
   env: 
-    GITHUB_TOKEN: $(GitHubToken)
+    GITHUB_TOKEN: $(GH_TOKEN)
     FOO: $(foo)
 
 - script: > 
