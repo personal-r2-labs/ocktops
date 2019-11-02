@@ -24,7 +24,7 @@ steps:
   env: 
     GITHUB_TOKEN: $(GH_TOKEN)
   
-- script: GITHUB_TOKEN="$env:GITHUB_TOKEN"
+- script: GITHUB_TOKEN=$(GH_TOKEN)
 
 - script: > 
     npx semantic-release 
