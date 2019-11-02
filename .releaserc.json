@@ -1,0 +1,9 @@
+{
+    "branch": "next",
+    "plugins": [
+        ["semantic-release-ado", {
+          "varName": "version",
+          "setOnlyOnRelease": true
+        }]
+      ]
+}

@@ -8,12 +8,28 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+strategy:
+  matrix:
+    node_12_x:
+      node_version: 12.11.0
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: NodeTool@0
+  inputs:
+    versionSpec: $(node_version)
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: > 
+    npx -p semantic-release
+    -p @semantic-release/git
+    -p semantic-release-ado
+    semantic-release
+  env: { GH_TOKEN: $(GitHubToken) }
+  displayName: 'Semantic Release'
+
+- script: echo $(nextRelease)
+  displayName: 'Show next version'    
+
+# - script: |
+#     echo Add other tasks to build, test, and deploy your project.
+#     echo See https://aka.ms/yaml
+#   displayName: 'Run a multi-line script'
