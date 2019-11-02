@@ -29,8 +29,8 @@ steps:
   env: { GH_TOKEN: $(GitHubToken) }
   displayName: 'Semantic Release'
 
-- script: echo $(nextRelease)
-  displayName: 'Show next version'    
+- script: echo $(version)
+  displayName: 'Show master version'    
 
 # - script: |
 #     echo Add other tasks to build, test, and deploy your project.
