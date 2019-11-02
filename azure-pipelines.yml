@@ -23,17 +23,6 @@ steps:
 
 - script: > 
     npx -p semantic-release
-    -p @semantic-release/git
-    -p semantic-release-ado
-    semantic-release
   env: 
     GH_TOKEN: $(GitHubToken)
   displayName: 'Semantic Release'
-
-- script: echo $(version)
-  displayName: 'Show master version'    
-
-# - script: |
-#     echo Add other tasks to build, test, and deploy your project.
-#     echo See https://aka.ms/yaml
-#   displayName: 'Run a multi-line script'
