@@ -21,6 +21,8 @@ steps:
   inputs:
     versionSpec: $(node_version)
 
+- script: sh GITHUB_TOKEN=$(GH_TOKEN)
+
 - script: > 
     npx semantic-release 
     -r https://github.com/romulo2franca/ocktops.git
