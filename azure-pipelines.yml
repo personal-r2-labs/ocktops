@@ -22,7 +22,7 @@ steps:
     versionSpec: $(node_version)
 
   
-- script: echo $env:GIT_VAR
+- script: echo "$env:GIT_VAR"
   env: 
     GIT_VAR: $(GH_TOKEN)
 
