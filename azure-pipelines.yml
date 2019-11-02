@@ -21,11 +21,12 @@ steps:
   inputs:
     versionSpec: $(node_version)
 
-  env: 
-    GIT_VAR: $(GH_TOKEN)
   
 - script: echo $env:GIT_VAR
+  env: 
+    GIT_VAR: $(GH_TOKEN)
 
+    
 - script: > 
     npx semantic-release 
     -r https://github.com/romulo2franca/ocktops.git
